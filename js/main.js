@@ -1,28 +1,24 @@
 const DEBUG = false;
-const START_SCENE = "menu";
-// const SCALE = 5;
-const WIDTH = 640;
-const HEIGHT = 480;
+const START_SCENE = "snake";
+const WIDTH = 480;
+const HEIGHT = 640;
+const LANG = "en";
 
 let config = {
   type: Phaser.AUTO,
-  width: 640,
-  height: 480,
-  backgroundColor: "#ff0000",
+  width: WIDTH,
+  height: HEIGHT,
+  backgroundColor: "#ff00ff",
   scene: [
     Boot,
     Preloader,
     Menu,
-    Prototype
+    Snake
   ],
   render: {
-    // antialias: false,
     pixelArt: true,
-    // antialiasGL: false
   },
   pixelArt: true,
-  // antialias: false,
-  // antialiasGL: false,
   physics: {
     default: 'arcade',
     arcade: {

@@ -1,13 +1,25 @@
-class Preloader extends Phaser.Class {
+class Preloader extends Phaser.Scene {
+
   constructor(config) {
+    console.log(`Preloader.constructor()`)
     super({
       key: `preloader`
     });
   }
 
   preload() {
-    // this.load.image(`i-block`, `assets/blocks/IBlock.png`);
-    // this.load.audio('asharp', `assets/sounds/Asharp.mp3`);
+    console.log(`>> Preloader.preload()`)
+    this.load.image(`head`, `assets/images/head.png`);
+    this.load.image(`body`, `assets/images/body.png`);
+    this.load.image(`apple`, `assets/images/apple.png`);
+    this.load.image(`wall`, `assets/images/wall.png`);
+    this.load.image(`black`, `assets/images/black.png`);
+
+    this.load.audio('move', [`assets/sounds/move.mp3`, `assets/sounds/move.ogg`, `assets/sounds/move.wav`]);
+    this.load.audio('hit', [`assets/sounds/hit.mp3`, `assets/sounds/hit.ogg`, `assets/sounds/hit.wav`]);
+    this.load.audio('apple', [`assets/sounds/apple.mp3`, `assets/sounds/apple.ogg`, `assets/sounds/apple.wav`]);
+
+    this.load.json('strings', `assets/json/${LANG}.json`);
 
     // Loading screen visuals
 
@@ -28,9 +40,13 @@ class Preloader extends Phaser.Class {
       progressBar.fillStyle(0xffffff, 1);
       progressBar.fillRect(this.clown.x - this.clown.width / 2, this.clown.y + this.clown.height / 2, this.clown.width * value, 5);
       if (value === 1) {
+        console.log(`>> Starting ${START_SCENE}`)
         this.scene.start(START_SCENE);
       }
     });
   }
 
+  create() {
+    console.log(`>> Preloader.create()`);
+  }
 }
