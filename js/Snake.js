@@ -8,7 +8,6 @@ class Snake extends Phaser.Scene {
         super({
             key: 'snake'
         });
-
     }
 
     init() {
