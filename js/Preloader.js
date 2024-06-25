@@ -43,7 +43,8 @@ class Preloader extends Phaser.Scene {
   }
 
   create() {
-    console.log(`>> Preloader.create()`);
-    this.scene.start(START_SCENE);
+    setTimeout(() => {
+      this.scene.start(START_SCENE);
+    }, 1000);
   }
 }

@@ -7,12 +7,10 @@ class Boot extends Phaser.Scene {
   }
 
   preload() {
-    console.log(">> Boot.preload()");
-    // this.load.image('clown_logo', 'assets/images/clown_logo.png');
+    this.load.image('clown_logo', 'assets/images/clown_logo.png');
   }
 
   create() {
-    console.log(">> Boot.create()")
     this.game.scene.start(`preloader`);
   }
 }

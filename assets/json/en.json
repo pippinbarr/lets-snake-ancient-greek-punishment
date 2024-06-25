@@ -6,5 +6,32 @@
         "ANCIENT",
         "GREEK",
         "PUNISHMENT"
-    ]
+    ],
+    "ui": {
+        "controls": {
+            "keyboard": [
+                "ARROWS",
+                "CONTROL",
+                "SNAKE"
+            ],
+            "touch": [
+                "SWIPES",
+                "CONTROL",
+                "SNAKE"
+            ]
+        },
+        "reset": {
+            "keyboard": [
+                "R=RESTART M=MENU"
+            ],
+            "touch": {
+                "restart": [],
+                "menu": []
+            }
+        },
+        "gameover": "GAME OVER",
+        "youwin": "YOU WIN",
+        "youlose": "YOU LOSE",
+        "points": "POINTS"
+    }
 }
