@@ -39,14 +39,11 @@ class Preloader extends Phaser.Scene {
       progressBar.clear();
       progressBar.fillStyle(0xffffff, 1);
       progressBar.fillRect(this.clown.x - this.clown.width / 2, this.clown.y + this.clown.height / 2, this.clown.width * value, 5);
-      if (value === 1) {
-        console.log(`>> Starting ${START_SCENE}`)
-        this.scene.start(START_SCENE);
-      }
     });
   }
 
   create() {
     console.log(`>> Preloader.create()`);
+    this.scene.start(START_SCENE);
   }
 }

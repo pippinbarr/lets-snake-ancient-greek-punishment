@@ -38,3 +38,13 @@ Maybe the effect is on time instead of distance? Is that fair? Like at the half-
 Or the tile increment gets smaller and smaller until there's no motion?
 
 How to handle the two-dimensionality?
+
+## Don't reinvent the ouroboros -- Tuesday 25 June 2024
+
+I caught myself thinking about how I would engineer a new version of Snake for Let's Snake and it would be so clean and beautiful and also arguing that the previous version was written in Phaser 2 etc.
+
+But NO PIPPIN. Just use the Snake you've already written, that works, and move fast. In honour of that I'm going to do it now BEFORE I do anything else today. Let's see if I can do the conversion to Phaser 3 quickly... or is it a hell waiting in there for me? LET'S SEE.
+
+This is a bigger picture thing about game making too. And maybe especially for how I'm feeling about it just lately? I've spent a lot of time quite embedded in the specifics of implementations and surfacing them... and that has led to dwelling a lot on technical matters, luxuriating even... which takes time. And is interesting, but it's a timeline I don't think I want right now. I'd like to go idea->thing a little faster.
+
+So, less love of code and more love of game.
