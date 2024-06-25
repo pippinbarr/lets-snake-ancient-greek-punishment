@@ -1,8 +1,8 @@
 # To-dos
 
 ## General Snake
+- ~~Walls are misaligned~~
+- ~~Text is misaligned~~
+- ~~Head collision is delayed by one~~
 
-- Head collision is delayed by one
-- Walls are misaligned
-- Text is misaligned
-- Bug checking
+- There's always more bug checking in the banana stand

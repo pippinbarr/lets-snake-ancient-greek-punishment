@@ -102,10 +102,13 @@ class Snake extends Phaser.Scene {
         }
 
         this.addSnakeBits();
-        this.updateSnakePosition();
         this.checkAppleCollision();
         this.checkBodyCollision();
         this.checkWallCollision();
+
+        if (!this.dead) {
+            this.updateSnakePosition();
+        }
     }
 
     /**
@@ -242,6 +245,7 @@ class Snake extends Phaser.Scene {
 
         if (this.snakeBitsToAdd > 0) {
             let bit = this.snakeBodyGroup.create(0, 0, 'body');
+            bit.setOrigin(0, 0);
             this.snake.unshift(bit)
             this.snakeBitsToAdd = Math.max(0, this.snakeBitsToAdd - 1);
         }
@@ -262,13 +266,13 @@ class Snake extends Phaser.Scene {
         this.snakeHead.y += this.next.y;
 
         if (this.snakeHead.x >= this.width) {
-            this.snakeHead.x = 0;
+            this.snakeHead.x = this.GRID_SIZE;
         }
         else if (this.snakeHead.x < 0) {
             this.snakeHead.x = this.width - this.GRID_SIZE;
         }
         if (this.snakeHead.y >= this.height) {
-            this.snakeHead.y = 0;
+            this.snakeHead.y = this.GRID_SIZE;
         }
         else if (this.snakeHead.y < 0) {
             this.snakeHead.y = this.height - this.GRID_SIZE;
@@ -300,7 +304,6 @@ class Snake extends Phaser.Scene {
     checkWallCollision() {
         this.wallGroup.children.each((wall) => {
             if (this.snakeHead.body.position.equals(wall.body.position)) {
-                console.log(`die`)
                 this.die();
                 return;
             }
@@ -435,7 +438,8 @@ class Snake extends Phaser.Scene {
         for (let y = this.WALL_TOP; y <= this.WALL_BOTTOM; y++) {
             for (let x = this.WALL_LEFT; x <= this.WALL_RIGHT; x++) {
                 if (y == this.WALL_TOP || y == this.WALL_BOTTOM || x == this.WALL_LEFT || x == this.WALL_RIGHT) {
-                    this.wallGroup.create(x * this.GRID_SIZE, y * this.GRID_SIZE, 'wall')
+                    let wall = this.wallGroup.create(x * this.GRID_SIZE, y * this.GRID_SIZE, 'wall')
+                    wall.setOrigin(0, 0);
                 }
             }
         }
@@ -443,6 +447,7 @@ class Snake extends Phaser.Scene {
 
     createApple() {
         this.apple = this.physics.add.image(-100, -100, 'apple');
+        this.apple.setOrigin(0, 0);
     }
 
     createTexts() {
@@ -462,10 +467,10 @@ class Snake extends Phaser.Scene {
                 let char = this.add.text(this.GRID_SIZE * 0.5 + x * this.GRID_SIZE, y * this.GRID_SIZE, ' ', {
                     fill: `white`,
                     fontSize: this.FONT_SIZE * 0.75,
-                    // align: `center`
+                    textAlign: `center`
                 });
                 this.textGroup.add(char);
-                // char.originX = 0.5;
+                char.setOrigin(0.5, 0);
                 char.tint = 0xffffff;
                 char.scaleY = 24 / this.FONT_SIZE;
                 this.textGrid[y].push(char);
@@ -503,6 +508,7 @@ class Snake extends Phaser.Scene {
         this.snake = [];
         this.snakeBodyGroup = this.physics.add.group();
         this.snakeHead = this.physics.add.image(this.SNAKE_START_X * this.GRID_SIZE, this.SNAKE_START_Y * this.GRID_SIZE, 'head');
+        this.snakeHead.setOrigin(0, 0);
         this.snake.unshift(this.snakeHead);
 
         this.snakeBitsToAdd = 3;
