@@ -61,5 +61,19 @@
                 "PROMETHEUSSS"
             ]
         }
+    },
+    "tantalus": {
+        "controls": {
+            "keyboard": [
+                "ARROWS",
+                "CONTROL",
+                "TANTALUSSS"
+            ],
+            "touch": [
+                "SWIPES",
+                "CONTROL",
+                "TANTALUSSS"
+            ]
+        }
     }
 }

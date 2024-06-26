@@ -22,3 +22,9 @@
 
 - Oopsie, got so enthused I didn't write any todos for the majority of this ~~Get it working~~
 - Trying that out for now ~~Should the hover go vertically up? It's a bit complicated... maybe the eagle should come in at a slower tick? How? Eagle tick?~~
+
+## Tantalus
+
+- Snake in the middle, apple above apple below
+- Apple retreats outside walls based on your distance from it
+- Death is a reset

@@ -1,5 +1,5 @@
 const DEBUG = false;
-const START_SCENE = "prometheus";
+const START_SCENE = "tantalus";
 const WIDTH = 480;
 const HEIGHT = 640;
 const LANG = "en";
@@ -15,7 +15,8 @@ let config = {
     Menu,
     Snake,
     Sisyphus,
-    Prometheus
+    Prometheus,
+    Tantalus
   ],
   render: {
     pixelArt: true,
