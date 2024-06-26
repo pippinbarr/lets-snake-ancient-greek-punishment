@@ -48,3 +48,11 @@ But NO PIPPIN. Just use the Snake you've already written, that works, and move f
 This is a bigger picture thing about game making too. And maybe especially for how I'm feeling about it just lately? I've spent a lot of time quite embedded in the specifics of implementations and surfacing them... and that has led to dwelling a lot on technical matters, luxuriating even... which takes time. And is interesting, but it's a timeline I don't think I want right now. I'd like to go idea->thing a little faster.
 
 So, less love of code and more love of game.
+
+## Sisyphusssed -- Wednesday 26 June 2024
+
+Well I guess I got Snake working yesterday and then also got the Sisyphus level pretty tidied away? It came together pretty easily because of... the constraints! Yay constraints! Things fall into place in this kind of hybridization and adaptation, fewer choices.
+
+I suspect Sisyphus was the easiest but that's alright, I'll pop away the others over the next days. As it comes so it goes.
+
+Feels good to be making something that makes sense. 

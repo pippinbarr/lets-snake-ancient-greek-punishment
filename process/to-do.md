@@ -6,6 +6,7 @@
 - ~~Head collision is delayed by one~~
 
 - Delay on death sound
+- Tint the apple to the different classic LPAG colours? Kind of cute?
 - There's always more bug checking in the banana stand
 
 ## Sisyphus
