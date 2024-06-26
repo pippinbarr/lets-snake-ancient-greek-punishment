@@ -5,6 +5,8 @@ class Snake extends Phaser.Scene {
             key: config.key ? config.key : `snake`
         });
 
+        this.stateName = config.key ? config.key : `snake`;
+
         this.GRID_SIZE = 20;
         this.NUM_ROWS = 0;
         this.NUM_COLS = 0;
@@ -19,6 +21,9 @@ class Snake extends Phaser.Scene {
         this.MAX_SCORE = 9999999990;
         this.APPLE_DELAY = 1500;
         this.DEATH_DELAY = 3;
+
+        this.CONTROLS_X = 8;
+        this.CONTROLS_Y = 7;
 
         this.textGrid = [];
 
@@ -43,13 +48,11 @@ class Snake extends Phaser.Scene {
 
         this.textGrid = [];
         this.dead = false;
-        this.stateName = 'snake';
         this.inputEnabled = true;
 
         this.NUM_ROWS = HEIGHT / this.GRID_SIZE;
         this.NUM_COLS = WIDTH / this.GRID_SIZE;
-        this.CONTROLS_X = 8;
-        this.CONTROLS_Y = 7;
+
 
         this.instructionsButtonGroup = this.add.group();
 
@@ -458,7 +461,7 @@ class Snake extends Phaser.Scene {
         this.controlsGroup = this.add.group();
 
         this.createTextGrid();
-        this.createInstructions();
+        // this.createInstructions();
         this.createControls();
     }
 
@@ -497,10 +500,10 @@ class Snake extends Phaser.Scene {
     createControls() {
         let controlsStrings = [];
         if (this.sys.game.device.os.desktop) {
-            controlsStrings = this.strings.ui.controls.keyboard;
+            controlsStrings = this.strings[this.stateName].controls.keyboard;
         }
         else {
-            controlsStrings = this.strings.ui.controls.touch;
+            controlsStrings = this.strings[this.stateName].controls.touch;
         }
 
         this.addTextToGrid(this.CONTROLS_X, this.CONTROLS_Y, controlsStrings, this.controlsGroup);

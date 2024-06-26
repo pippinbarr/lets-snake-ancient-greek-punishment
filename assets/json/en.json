@@ -33,5 +33,19 @@
         "youwin": "YOU WIN",
         "youlose": "YOU LOSE",
         "points": "POINTS"
+    },
+    "sisyphus": {
+        "controls": {
+            "keyboard": [
+                "ARROWS",
+                "CONTROL",
+                "SSSISSSYPHUSSS"
+            ],
+            "touch": [
+                "SWIPES",
+                "CONTROL",
+                "SSSISSSYPHUSSS"
+            ]
+        }
     }
 }

@@ -3,82 +3,86 @@ class Sisyphus extends Snake {
         super({
             key: "sisyphus"
         });
+
+        this.SNAKE_START_X = 4;
+        this.SNAKE_START_Y = 6;
+
+        this.CONTROLS_X = 4;
+        this.CONTROLS_Y = 8;
+
+        this.NEW_BODY_PIECES_PER_APPLE = 0;
+        this.APPLE_DELAY = this.SNAKE_TICK * 1;
     }
 
     create() {
         this.applePositions = [
             { x: 4, y: 27 },
+            { x: 4, y: 27 },
             { x: 5, y: 27 },
             { x: 6, y: 26 },
-            // { x: 7, y: 25 },
-            // { x: 8, y: 24 },
-            // { x: 9, y: 23 },
-            // { x: 10, y: 22 },
-            // { x: 11, y: 21 },
-            // { x: 12, y: 20 },
-            // { x: 13, y: 19 },
-            // { x: 14, y: 18 },
-            // { x: 15, y: 17 },
-            // { x: 16, y: 16 },
-            // { x: 17, y: 15 },
-            // { x: 18, y: 14 },
-            // { x: 19, y: 13 },
-            // { x: 20, y: 12 },
+            { x: 7, y: 25 },
+            { x: 8, y: 24 },
+            { x: 9, y: 23 },
+            { x: 10, y: 22 },
+            { x: 11, y: 21 },
+            { x: 12, y: 20 },
+            { x: 13, y: 19 },
+            { x: 14, y: 18 },
+            { x: 15, y: 17 },
+            { x: 16, y: 16 },
+            { x: 17, y: 15 },
+            { x: 18, y: 14 },
+            { x: 19, y: 13 },
+            { x: 20, y: 12 },
         ];
         this.currentApplePosition = 0;
 
         super.create();
     }
 
-    startAppleTimer() {
-        this.appleTimer = this.time.addEvent({
-            delay: this.SNAKE_TICK,
+    repositionApple(apple = undefined, direction = 1) {
+        console.log(this.currentApplePosition, direction)
+        // Need to see that apple!
+        apple.setVisible(true);
+
+        // Stop the rollbackTimer (if this was an eating-based reposition)
+        if (this.rollbackTimer) this.rollbackTimer.remove();
+
+        // Choose the next position (up or down)
+        this.currentApplePosition += direction;
+        // Clamp it
+        if (this.currentApplePosition < 1) this.currentApplePosition = 1;
+
+        // Check if they reached the top
+        if (this.currentApplePosition === this.applePositions.length) {
+            // Stay on the last position...
+            this.currentApplePosition--;
+            // Force a rollback
+            direction = -1;
+        }
+
+        const pos = this.applePositions[this.currentApplePosition];
+        apple.x = pos.x * this.GRID_SIZE;
+        apple.y = pos.y * this.GRID_SIZE;
+
+        // Delay the rollback based on whether it's already rolling or not
+        const delayMultiplier = direction < 0 ? 1 : 10;
+        this.rollbackTimer = this.time.addEvent({
+            delay: 1000 * this.SNAKE_TICK * delayMultiplier,
             callback: this.repositionApple,
-            args: [this.apple, 1],
+            args: [this.apple, -1],
             callbackScope: this
         });
     }
 
-    repositionApple(apple, direction) {
-        this.currentApplePosition += direction;
-        if (this.currentApplePosition < 0) this.currentApplePosition = 0;
-
-        apple.setVisible(true);
-
-        let pos = this.applePositions[this.currentApplePosition];
-
-        if (pos) {
-            // if (this.noPushTimer) this.noPushTimer.remove();
-
-            apple.x = pos.x * this.GRID_SIZE;
-            apple.y = pos.y * this.GRID_SIZE;
-
-            // this.noPushTimer = this.time.addEvent({
-            //     delay: this.SNAKE_TICK * 20,
-            //     callback: this.repositionApple,
-            //     args: [this.apple, -1],
-            //     callbackScope: this
-            // });
-            return true;
-        }
-        else {
-            // Run out of positions, time to reset!
-            // Reset the list of apple positions
-            this.currentApplePosition = 0;
-            // Get the first one
-            let pos = this.applePositions[this.currentApplePosition];
-            // Position the apple
-            apple.x = pos.x * this.GRID_SIZE;
-            apple.y = pos.y * this.GRID_SIZE;
-            // Reset the snake
-            this.snake = [];
-            this.snake.unshift(this.snakeHead);
-            this.snakeBodyGroup.clear(true, true);
-            this.snakeBitsToAdd = 3;
-            this.score = 0;
-            this.setScoreText(this.score.toString());
-            return true;
-        }
+    gameOver() {
+        this.dead = false;
+        this.snakeHead.setVisible(true);
+        this.snakeBodyGroup.clear(true, true);
+        this.snake = [this.snakeHead];
+        this.snakeHead.x = this.SNAKE_START_X * this.GRID_SIZE;
+        this.snakeHead.y = this.SNAKE_START_Y * this.GRID_SIZE;
+        this.snakeBitsToAdd = 3;
     }
 
     /**
@@ -128,5 +132,17 @@ class Sisyphus extends Snake {
                 }
             }
         }
+    }
+
+    /**
+     * Disabling the exits!
+     */
+
+    restart() {
+        // No
+    }
+
+    gotoMenu() {
+        // No
     }
 }
