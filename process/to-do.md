@@ -5,4 +5,14 @@
 - ~~Text is misaligned~~
 - ~~Head collision is delayed by one~~
 
+- Delay on death sound
 - There's always more bug checking in the banana stand
+
+## Sisyphus
+
+- Yes this is what should happen ~~What should happen if you don't eat an apple soon enough? Should they "roll back down"?~~
+
+- Continue work on implementing the rollback of an apple (should happen for reaching top and for not eating the next apple within a small number of ticks, should it be reversable or it just happens and that's that?)
+- What is wall/self death? Respawn with no fuss?
+- Remove ability to get to the menu
+- Fix the instructions to say USE ARROW TO CONTROL SSSYSSYPHUSSS har har

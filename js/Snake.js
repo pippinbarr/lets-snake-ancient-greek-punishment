@@ -1,8 +1,8 @@
 class Snake extends Phaser.Scene {
 
-    constructor(config) {
+    constructor(config = {}) {
         super({
-            key: `snake`
+            key: config.key ? config.key : `snake`
         });
 
         this.GRID_SIZE = 20;
@@ -12,7 +12,7 @@ class Snake extends Phaser.Scene {
         this.SNAKE_START_LENGTH = 4;
         this.SNAKE_START_X = 11;
         this.SNAKE_START_Y = 11;
-        this.SNAKE_TICK = 0.15;
+        this.SNAKE_TICK = 0.2;
         this.NEW_BODY_PIECES_PER_APPLE = 3;
         this.SNAKE_FLICKER_SPEED = 0.2;
         this.APPLE_SCORE = 10;
@@ -132,6 +132,7 @@ class Snake extends Phaser.Scene {
         this.appleTimer = this.time.addEvent({
             delay: this.APPLE_DELAY,
             callback: this.repositionApple,
+            args: [this.apple],
             callbackScope: this
         });
     }
@@ -344,10 +345,12 @@ class Snake extends Phaser.Scene {
             return true;
         }
         else {
-            this.appleTimer.add(this.SNAKE_TICK * Phaser.Timer.SECOND, function () {
-                this.repositionApple(apple);
-            }, this);
-            this.appleTimer.start();
+            this.appleTimer = this.time.addEvent({
+                delay: this.APPLE_DELAY,
+                callback: this.repositionApple,
+                args: [this.apple],
+                callbackScope: this
+            });
             return false;
         }
     }
