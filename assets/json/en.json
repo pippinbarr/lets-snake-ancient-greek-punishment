@@ -47,5 +47,19 @@
                 "SSSISSSYPHUSSS"
             ]
         }
+    },
+    "prometheus": {
+        "controls": {
+            "keyboard": [
+                "ARROWS",
+                "CONTROL",
+                "PROMETHEUSSS"
+            ],
+            "touch": [
+                "SWIPES",
+                "CONTROL",
+                "PROMETHEUSSS"
+            ]
+        }
     }
 }

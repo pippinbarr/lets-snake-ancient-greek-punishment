@@ -124,11 +124,11 @@ class Snake extends Phaser.Scene {
     }
 
     gotoMenu() {
-        this.scene.start('Menu');
+        // this.scene.start('Menu');
     }
 
     restart() {
-        this.scene.start(this.stateName);
+        // this.scene.start(this.stateName);
     }
 
     startAppleTimer() {

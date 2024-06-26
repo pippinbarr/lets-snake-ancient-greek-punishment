@@ -1,5 +1,5 @@
 const DEBUG = false;
-const START_SCENE = "sisyphus";
+const START_SCENE = "prometheus";
 const WIDTH = 480;
 const HEIGHT = 640;
 const LANG = "en";
@@ -14,7 +14,8 @@ let config = {
     Preloader,
     Menu,
     Snake,
-    Sisyphus
+    Sisyphus,
+    Prometheus
   ],
   render: {
     pixelArt: true,
