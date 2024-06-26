@@ -17,3 +17,8 @@
 - ~~Continue work on implementing the rollback of an apple (should happen for reaching top and for not eating the next apple within a small number of ticks, should it be reversable or it just happens and that's that?)~~
 - ~~Force rollback at top...~~
 - ~~What is wall/self death? Respawn with no fuss?~~
+
+## Prometheus
+
+- Oopsie, got so enthused I didn't write any todos for the majority of this ~~Get it working~~
+- Trying that out for now ~~Should the hover go vertically up? It's a bit complicated... maybe the eagle should come in at a slower tick? How? Eagle tick?~~
