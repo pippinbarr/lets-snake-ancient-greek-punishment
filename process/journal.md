@@ -56,3 +56,39 @@ Well I guess I got Snake working yesterday and then also got the Sisyphus level 
 I suspect Sisyphus was the easiest but that's alright, I'll pop away the others over the next days. As it comes so it goes.
 
 Feels good to be making something that makes sense. 
+
+## Danaidssssss? -- Thursday 27 June 2024
+
+As of this morning we now have
+
+- Sisyphus
+- Prometheus
+- Tantalus
+
+in the can. As I started the structure for Danaids I wondered if it's somehow a bit incorrect?
+
+So the point/idea in Danaids is you're trying to carry something from one place to another but it runs away before you get there.
+
+In the game version I did a different version, which was that you get there but the receptacle itself drains away the water.
+
+In terms of Snake it's a bit tricky. There are some "obvious" ideas:
+
+- The thing you carry probably has to be an apple since you pick it up
+- The representation of that apple draining away probably has to be your points going down (maybe one by one)
+
+But how do you indicate the idea of *taking the apple* to a place. The Snake only consumes, it doesn't transport...
+
+The initial thought was to use another apple that represents the destination... so the first apple appears, you eat it and get points, the other apple appears, you eat it and lose the points...
+
+That recreates the to and fro and the idea of loss. Arguably the behaviour of the second apple makes very little sense though... inconsistent.
+
+A simpler version would be to say
+
+- "The snake is the bathtub"
+- "The apple is the water"
+- You eat the water to gain points
+- But the points drain away
+
+You know, that's better I think... no need to be wedded to the visual dynamics of the original game...
+
+So you eat an apple and before the next one shows up your points have drained away. Love. Probably want a sound effect?

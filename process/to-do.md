@@ -28,3 +28,7 @@
 - ~~Snake in the middle, apple above apple below~~
 - ~~Apple retreats outside walls based on your distance from it~~
 - ~~Death is a reset~~
+
+## Danaids
+
+- After apple-eat, drain points (delay with a timer, have a sound per tick)
