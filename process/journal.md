@@ -92,3 +92,22 @@ A simpler version would be to say
 You know, that's better I think... no need to be wedded to the visual dynamics of the original game...
 
 So you eat an apple and before the next one shows up your points have drained away. Love. Probably want a sound effect?
+
+## Zeno? --- Thursday 27 Jube 2024
+
+If I could conquer the Zeno concept I could probably have this game finished today which would mean I'd made it in four days which is LIKE THE GOOD OLD FUCKING DAYS.
+
+As per my initial thought, how do you handle it being 2D? The point of Zeno is you're trying to go SOMEWHERE - there's a point of reference - and if the player can direct the snake away from that somewhere it doesn't work...
+
+In the original game you can only apply effort to moving forward toward the flag (should I have a flag?).
+
+So in the Snake it wouldn't be totally unreasonable to have the snake "on the ground" and only able to move right...
+
+I could *literally* recreate the original with a repeated "half-way and slide-back" but it sort of seems wrong?
+
+You could do the thing of progressively zooming in to show the (lack of) progress. Eventually you'd just see an edge of the snake moving one pixel... but nothing about the game so far has involved the idea of a camera that can be manipulated...
+
+You could also switch over to time and double the number of tickets required to get halfway? With an Infinite number of tickets when you're right there to cheat... I mean one funny thing with Zeno in Snake's world, actually (and in all game worlds potentially) is that the world is quantized or whatever... there's a very specific measure of moving one unit and it takes a very specific amount of time... there's *no such thing* as moving halfway between two tiles on a Snake board...
+
+... so does that open up the idea of actually getting the apple? Is that funnier than not? Let me try it out at least.
+
