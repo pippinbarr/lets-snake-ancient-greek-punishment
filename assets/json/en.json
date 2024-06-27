@@ -11,13 +11,11 @@
         "controls": {
             "keyboard": [
                 "ARROWS",
-                "CONTROL",
-                "SNAKE"
+                "CONTROL"
             ],
             "touch": [
                 "SWIPES",
-                "CONTROL",
-                "SNAKE"
+                "CONTROL"
             ]
         },
         "reset": {
@@ -34,46 +32,19 @@
         "youlose": "YOU LOSE",
         "points": "POINTS"
     },
+    "snake": {
+        "hero": "SSSNAKE"
+    },
     "sisyphus": {
-        "controls": {
-            "keyboard": [
-                "ARROWS",
-                "CONTROL",
-                "SSSISSSYPHUSSS"
-            ],
-            "touch": [
-                "SWIPES",
-                "CONTROL",
-                "SSSISSSYPHUSSS"
-            ]
-        }
+        "hero": "SSSISSSYPHUSSS"
     },
     "prometheus": {
-        "controls": {
-            "keyboard": [
-                "ARROWS",
-                "CONTROL",
-                "PROMETHEUSSS"
-            ],
-            "touch": [
-                "SWIPES",
-                "CONTROL",
-                "PROMETHEUSSS"
-            ]
-        }
+        "hero": "PROMETHEUSSS"
     },
     "tantalus": {
-        "controls": {
-            "keyboard": [
-                "ARROWS",
-                "CONTROL",
-                "TANTALUSSS"
-            ],
-            "touch": [
-                "SWIPES",
-                "CONTROL",
-                "TANTALUSSS"
-            ]
-        }
+        "hero": "TANTALUSSS"
+    },
+    "danaids": {
+        "hero": "DANAIDSSS"
     }
 }

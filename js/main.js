@@ -1,5 +1,5 @@
 const DEBUG = false;
-const START_SCENE = "tantalus";
+const START_SCENE = "danaids";
 const WIDTH = 480;
 const HEIGHT = 640;
 const LANG = "en";
@@ -16,7 +16,8 @@ let config = {
     Snake,
     Sisyphus,
     Prometheus,
-    Tantalus
+    Tantalus,
+    Danaids
   ],
   render: {
     pixelArt: true,

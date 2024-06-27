@@ -500,11 +500,12 @@ class Snake extends Phaser.Scene {
     createControls() {
         let controlsStrings = [];
         if (this.sys.game.device.os.desktop) {
-            controlsStrings = this.strings[this.stateName].controls.keyboard;
+            controlsStrings = this.strings.ui.controls.keyboard;
         }
         else {
-            controlsStrings = this.strings[this.stateName].controls.touch;
+            controlsStrings = this.strings.ui.controls.touch;
         }
+        controlsStrings.push(this.strings[this.stateName].hero);
 
         this.addTextToGrid(this.CONTROLS_X, this.CONTROLS_Y, controlsStrings, this.controlsGroup);
         this.controlsVisible = true;

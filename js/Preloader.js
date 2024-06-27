@@ -1,7 +1,6 @@
 class Preloader extends Phaser.Scene {
 
   constructor(config) {
-    console.log(`Preloader.constructor()`)
     super({
       key: `preloader`
     });
