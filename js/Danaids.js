@@ -9,26 +9,52 @@ class Danaids extends Snake {
 
         this.CONTROLS_X = 11;
         this.CONTROLS_Y = 18;
+
+        this.APPLE_DELAY = this.SNAKE_TICK * 1000 * 20;
+
+        this.growing = false;
+        this.shrinking = false;
+
     }
 
     create() {
         super.create();
-    }
 
-    startAppleTimer() {
-
-    }
-
-    createApple() {
-
+        this.lostPointSFX = this.sound.add(`lost-point`, 0.2);
     }
 
     checkAppleCollision() {
+        const ate = super.checkAppleCollision();
 
+        if (ate) {
+            this.growing = true;
+        }
     }
 
-    repositionApple() {
-
+    addSnakeBits() {
+        super.addSnakeBits();
+        if (this.snakeBitsToAdd === 0 && this.growing) {
+            this.growing = false;
+            this.time.addEvent({
+                delay: this.SNAKE_TICK * 1000 * 10,
+                callback: () => {
+                    this.snakeBitsToSubtract = 3;
+                    this.time.addEvent({
+                        delay: (this.SNAKE_TICK * 1000 * 3) / 10,
+                        callback: () => {
+                            this.lostPointSFX.play();
+                            this.addToScore(-1);
+                        },
+                        repeat: 9
+                    });
+                }
+            });
+        }
+        else if (this.snakeBitsToSubtract > 0) {
+            let bit = this.snake.shift();
+            bit.destroy();
+            this.snakeBitsToSubtract--;
+        }
     }
 
     gameOver() {

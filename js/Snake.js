@@ -293,7 +293,11 @@ class Snake extends Phaser.Scene {
             this.startAppleTimer();
             this.snakeBitsToAdd += this.NEW_BODY_PIECES_PER_APPLE;
             this.addToScore(this.APPLE_SCORE);
+
+            return true;
         }
+
+        return false;
     }
 
     checkBodyCollision() {

@@ -16,6 +16,7 @@ class Preloader extends Phaser.Scene {
     this.load.audio('move', [`assets/sounds/move.mp3`, `assets/sounds/move.ogg`, `assets/sounds/move.wav`]);
     this.load.audio('hit', [`assets/sounds/hit.mp3`, `assets/sounds/hit.ogg`, `assets/sounds/hit.wav`]);
     this.load.audio('apple', [`assets/sounds/apple.mp3`, `assets/sounds/apple.ogg`, `assets/sounds/apple.wav`]);
+    this.load.audio('lost-point', [`assets/sounds/lost-point.mp3`, `assets/sounds/lost-point.ogg`, `assets/sounds/lost-point.wav`]);
 
     this.load.json('strings', `assets/json/${LANG}.json`);
 

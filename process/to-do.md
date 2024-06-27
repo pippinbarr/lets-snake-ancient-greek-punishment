@@ -31,4 +31,4 @@
 
 ## Danaids
 
-- After apple-eat, drain points (delay with a timer, have a sound per tick)
+- ~~After apple-eat, drain points (delay with a timer, have a sound per tick)~~
