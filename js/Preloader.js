@@ -7,6 +7,8 @@ class Preloader extends Phaser.Scene {
   }
 
   preload() {
+    this.load.bitmapFont('atari', 'assets/fonts/atari.png', 'assets/fonts/atari.xml');
+
     this.load.image(`head`, `assets/images/head.png`);
     this.load.image(`body`, `assets/images/body.png`);
     this.load.image(`apple`, `assets/images/apple.png`);

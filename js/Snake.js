@@ -10,7 +10,7 @@ class Snake extends Phaser.Scene {
         this.GRID_SIZE = 20;
         this.NUM_ROWS = 0;
         this.NUM_COLS = 0;
-        this.FONT_SIZE = 24;
+        this.FONT_SIZE = 20;
         this.SNAKE_START_LENGTH = 4;
         this.SNAKE_START_X = 11;
         this.SNAKE_START_Y = 11;
@@ -422,7 +422,7 @@ class Snake extends Phaser.Scene {
                     let sprite = buttonGroup.create(x * this.GRID_SIZE, y * this.GRID_SIZE, 'black');
                     sprite.inputEnabled = true;
                     sprite.name = text;
-                    sprite.events.onInputDown.add(callback, this);
+                    // sprite.events.onInputDown.add(callback, this);
                 }
                 x++;
             }
@@ -474,15 +474,20 @@ class Snake extends Phaser.Scene {
         for (let y = 0; y < this.NUM_ROWS; y++) {
             this.textGrid.push([]);
             for (let x = 0; x < this.NUM_COLS; x++) {
-                let char = this.add.text(this.GRID_SIZE * 0.5 + x * this.GRID_SIZE, y * this.GRID_SIZE, ' ', {
-                    fill: `white`,
-                    fontSize: this.FONT_SIZE * 0.75,
-                    textAlign: `center`
-                });
+                const charX = this.GRID_SIZE * 0.5 + x * this.GRID_SIZE;
+                const charY = y * this.GRID_SIZE + this.GRID_SIZE / 2;
+                var char = this.add.bitmapText(charX, charY, 'atari', '', this.FONT_SIZE, this.textGroup);
+                // let char = this.add.text(charX, charY, ' ', {
+                //     fontFamily: `atari`,
+                //     fill: `white`,
+                //     fontSize: this.FONT_SIZE,
+                //     textAlign: `center`
+                // });
                 this.textGroup.add(char);
-                char.setOrigin(0.5, 0);
+                char.setOrigin(0.5, 0.5);
                 char.tint = 0xffffff;
-                char.scaleY = 24 / this.FONT_SIZE;
+                // char.setScale(2);
+                // char.scaleY = 24 / this.FONT_SIZE;
                 this.textGrid[y].push(char);
             }
         }

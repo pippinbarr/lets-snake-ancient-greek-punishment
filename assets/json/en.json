@@ -1,13 +1,18 @@
 {
     "lang": "en",
     "title": [
-        "LET'S",
-        "SNAKE:",
-        "ANCIENT",
-        "GREEK",
+        "LET'S SNAKE:",
+        "ANCIENT GREEK",
         "PUNISHMENT"
     ],
     "ui": {
+        "games": [
+            "sisyphus",
+            "prometheus",
+            "tantalus",
+            "danaids",
+            "zeno"
+        ],
         "controls": {
             "keyboard": [
                 "ARROWS",
@@ -31,6 +36,19 @@
         "youwin": "YOU WIN",
         "youlose": "YOU LOSE",
         "points": "POINTS"
+    },
+    "menu": {
+        "hero": "MENUSNAKE",
+        "homepage": "pippinbarr.com",
+        "instructions": {
+            "keyboard": [
+                "UP/DOWN=SELECT",
+                "ENTER=PLAY"
+            ],
+            "touch": [
+                "TOUCH ITEM TO PLAY"
+            ]
+        }
     },
     "snake": {
         "hero": "SSSNAKE"
