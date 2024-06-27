@@ -25,6 +25,6 @@
 
 ## Tantalus
 
-- Snake in the middle, apple above apple below
-- Apple retreats outside walls based on your distance from it
-- Death is a reset
+- ~~Snake in the middle, apple above apple below~~
+- ~~Apple retreats outside walls based on your distance from it~~
+- ~~Death is a reset~~

@@ -8,7 +8,6 @@ class Preloader extends Phaser.Scene {
   }
 
   preload() {
-    console.log(`>> Preloader.preload()`)
     this.load.image(`head`, `assets/images/head.png`);
     this.load.image(`body`, `assets/images/body.png`);
     this.load.image(`apple`, `assets/images/apple.png`);
