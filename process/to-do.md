@@ -5,8 +5,10 @@
 - ~~Text is misaligned~~
 - ~~Head collision is delayed by one~~
 
-- Delay on death sound
-- Tint the apple to the different classic LPAG colours? Kind of cute?
+- General oddness around the tick and triggering things
+    - Delay on apple sound? 
+    - Delay on death sound?
+- I think the game Tint the apple to the different classic LPAG colours? Kind of cute?
 - There's always more bug checking in the banana stand
 
 ## Sisyphus
@@ -32,3 +34,7 @@
 ## Danaids
 
 - ~~After apple-eat, drain points (delay with a timer, have a sound per tick)~~
+
+## Zeno
+
+- Thank you, I did. See the journal for philosophizing. ~~Make it~~
