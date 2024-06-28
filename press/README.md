@@ -5,7 +5,7 @@
 ## The basics
 
 * Developer: [Pippin Barr](http://www.pippinbarr.com/)
-* Release: 3 July 2024
+* Release: 28 June 2024
 * Platform: Browser and mobile
 * Code repository: https://www.github.com/pippinbarr/lets-snake-ancient-greek-punishment/
 * Price: $0.00
