@@ -46,7 +46,8 @@
                 "ENTER=PLAY"
             ],
             "touch": [
-                "TOUCH ITEM TO PLAY"
+                "SWIPE UP/DOWN=SELECT",
+                "SWIPE RIGHT=PLAY"
             ]
         }
     },

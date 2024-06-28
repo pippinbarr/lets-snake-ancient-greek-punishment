@@ -92,7 +92,7 @@ class Snake extends Phaser.Scene {
             this.handleKeyboardInput();
         }
         else {
-            // this.handleTouchInput();
+            // this.handleTouchInpuKt();
         }
     }
 
@@ -176,36 +176,35 @@ class Snake extends Phaser.Scene {
         }
     }
 
-    handleTouchInput() {
-        console.log("swipe")
-        // if (this.dead) return;
-        // if (!this.inputEnabled) return;
+    handleTouchInput(dx, dy) {
+        if (this.dead) return;
+        if (!this.inputEnabled) return;
 
-        // let d = this.swipe.check();
-        // if (!d) return;
+        if (this.controlsVisible) {
+            this.hideControls();
+            this.startAppleTimer();
+        }
 
-        // if (this.controlsVisible) {
-        //     this.hideControls();
-        //     this.startAppleTimer();
-        // }
+        if (Math.abs(dx) - Math.abs(dy) > 0) {
+            // Horizontal
+            if (dx > 0) {
+                this.right();
+            }
+            else {
+                this.left();
+            }
+        }
+        else {
+            if (dy > 0) {
+                this.down();
+            }
+            else {
+                this.up();
+            }
+        }
 
-        // switch (d.direction) {
-        //     case this.swipe.DIRECTION_LEFT:
-        //         this.left();
-        //         break;
 
-        //     case this.swipe.DIRECTION_RIGHT:
-        //         this.right();
-        //         break;
 
-        //     case this.swipe.DIRECTION_UP:
-        //         this.up();
-        //         break;
-
-        //     case this.swipe.DIRECTION_DOWN:
-        //         this.down();
-        //         break;
-        // }
     }
 
     /**
@@ -539,15 +538,12 @@ class Snake extends Phaser.Scene {
             this.mKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);
         }
         else {
-            const config = {
-                enable: true,
-                bounds: undefined,
-                // threshold: 10,
-                // velocityThreshold: 1000,
-                dir: '4dir',
-            };
-            // this.swipe = this.scene.rexGestures.add.swipe(config);
-            // this.swipe.on(`swipe`, this.handleTouchInput, this);
+            this.hammer = new Hammer(document, {});
+            this.hammer.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+            this.hammer.on('swipe', (e) => {
+                this.handleTouchInput(e.deltaX, e.deltaY);
+            });
+
         }
         this.next = new Phaser.Geom.Point(0, 0);
     }

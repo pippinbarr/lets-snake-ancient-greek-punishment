@@ -7,11 +7,11 @@
 - More confusing than cute ~~I think the game Tint the apple to the different classic LPAG colours? Kind of cute?~~
 - ~~There's a single tick sound right at the start?~~
 - ~~General oddness around the tick and triggering events/sounds~~
+-~~ Touch controls~~
+    - Swipe based even better ~~Menu touch-based~~
+    - ~~Games swipe-based~~
 
-- Touch controls
-    - Menu touch-based
-    - Games swipe-based
-- There's always more bug checking in the banana stand
+- There's always more bug checking in the banana stand - but is there?
 
 ## Sisyphus
 

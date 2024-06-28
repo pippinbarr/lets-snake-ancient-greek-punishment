@@ -7,8 +7,6 @@ class Preloader extends Phaser.Scene {
   }
 
   preload() {
-    // this.load.scenePlugin(`rexgesturesplugin`, `js/libraries/rexgesturesplugin.min.js`, `rexGestures`, `rexGestures`);
-
     this.load.bitmapFont('atari', 'assets/fonts/atari.png', 'assets/fonts/atari.xml');
 
     this.load.image(`head`, `assets/images/head.png`);

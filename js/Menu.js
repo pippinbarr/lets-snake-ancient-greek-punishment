@@ -46,32 +46,14 @@ class Menu extends Snake {
     if (this.transition) return;
 
     if (Phaser.Input.Keyboard.JustDown(this.cursors.up)) {
-      if (this.selected > 0) {
-        this.selected--;
-        this.snakeHead.y -= this.GRID_SIZE;
-        this.moveSFX.play();
-      }
+      this.up();
     }
     else if (Phaser.Input.Keyboard.JustDown(this.cursors.down)) {
-      if (this.selected < this.games.length - 1) {
-        this.selected++;
-        this.snakeHead.y += this.GRID_SIZE;
-        this.moveSFX.play();
-      }
+      this.down();
     }
 
     if (Phaser.Input.Keyboard.JustDown(this.enterKey)) {
-      this.next = new Phaser.Geom.Point(this.GRID_SIZE, 0);
-      this.transition = true;
-      this.appleSFX.play();
-      // For some reason it plays a single moveSFX at the end of the scene??
-      this.moveSFX.setVolume(0);
-      this.time.addEvent({
-        delay: 1500,
-        callback: () => {
-          this.scene.start(this.games[this.selected].state);
-        }
-      })
+      this.right();
     }
   }
 
@@ -109,19 +91,41 @@ class Menu extends Snake {
 
   }
 
-  menuItemTouched() {
-    this.appleSFX.play();
-
-    if (this.selected) return;
-
-    for (let i = 0; i < this.snake.length; i++) {
-      this.snake[i].y = item.y;
-    }
-
-    this.selectMenuItem();
-  }
-
   createWalls() {
     this.wallGroup = this.physics.add.group();
+  }
+
+  up() {
+    if (this.selected > 0) {
+      this.selected--;
+      this.snakeHead.y -= this.GRID_SIZE;
+      this.moveSFX.play();
+    }
+  }
+
+  down() {
+    if (this.selected < this.games.length - 1) {
+      this.selected++;
+      this.snakeHead.y += this.GRID_SIZE;
+      this.moveSFX.play();
+    }
+  }
+
+  left() {
+
+  }
+
+  right() {
+    this.next = new Phaser.Geom.Point(this.GRID_SIZE, 0);
+    this.transition = true;
+    this.appleSFX.play();
+    // For some reason it plays a single moveSFX at the end of the scene??
+    this.moveSFX.setVolume(0);
+    this.time.addEvent({
+      delay: 1500,
+      callback: () => {
+        this.scene.start(this.games[this.selected].state);
+      }
+    })
   }
 }
