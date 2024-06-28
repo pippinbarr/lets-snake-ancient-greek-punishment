@@ -2,7 +2,7 @@
 
 ![Sisyphus as a Snake](./images/lets-snake-ancient-greek-punishment-banner.png)
 
-### [Play Online](../index.html)
+# [Play Online](../index.html)
 
 ## Dessscription
 
