@@ -36,15 +36,20 @@ And now here we are.
 
 ## GIFs
 
-![Sisyphus the snake](./gifs/sispyhus.gif)
+![Sisyphus the snake](./gifs/sispyhus.gif)  
+*Sisyphus*
 
-![Prometheus the snake](./gifs/prometheus.gif)
+![Prometheus the snake](./gifs/prometheus.gif)  
+*Prometheus*
 
-![Tantalus the snake](./gifs/tantalus.gif)
+![Tantalus the snake](./gifs/tantalus.gif)  
+*Tantalus*
 
-![Danaid the snake](./gifs/danaids.gif)
+![Danaid the snake](./gifs/danaids.gif)  
+*Danaids*
 
-![Zeno the snake](./gifs/zeno.gif)
+![Zeno the snake](./gifs/zeno.gif)  
+*Zeno*
 
 ## Credits
 
