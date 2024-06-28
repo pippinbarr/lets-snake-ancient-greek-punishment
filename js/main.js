@@ -1,5 +1,5 @@
 const DEBUG = false;
-const START_SCENE = "prometheus";
+const START_SCENE = "menu";
 const WIDTH = 480;
 const HEIGHT = 640;
 const LANG = "en";

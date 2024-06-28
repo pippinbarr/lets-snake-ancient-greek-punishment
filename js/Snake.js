@@ -92,7 +92,7 @@ class Snake extends Phaser.Scene {
             this.handleKeyboardInput();
         }
         else {
-            this.handleTouchInput();
+            // this.handleTouchInput();
         }
     }
 
@@ -113,8 +113,6 @@ class Snake extends Phaser.Scene {
         this.checkAppleCollision();
         this.checkBodyCollision();
         this.checkWallCollision();
-
-
     }
 
     /**
@@ -179,6 +177,7 @@ class Snake extends Phaser.Scene {
     }
 
     handleTouchInput() {
+        console.log("swipe")
         // if (this.dead) return;
         // if (!this.inputEnabled) return;
 
@@ -538,12 +537,17 @@ class Snake extends Phaser.Scene {
             this.cursors = this.input.keyboard.createCursorKeys();
             this.rKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
             this.mKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.M);
-            // this.input.keyboard.removeCapture(Phaser.Input.Keyboard.R)
-            // this.input.keyboard.removeCapture(Phaser.Input.Keyboard.M)
         }
         else {
-            // this.swipe = new Swipe(this.;
-            // this.swipe.diagonalDisabled = true;
+            const config = {
+                enable: true,
+                bounds: undefined,
+                // threshold: 10,
+                // velocityThreshold: 1000,
+                dir: '4dir',
+            };
+            // this.swipe = this.scene.rexGestures.add.swipe(config);
+            // this.swipe.on(`swipe`, this.handleTouchInput, this);
         }
         this.next = new Phaser.Geom.Point(0, 0);
     }
