@@ -28,6 +28,7 @@ class Prometheus extends Snake {
     }
 
     create() {
+        console.log("Prometheus create")
         super.create();
 
         this.createEagle();
@@ -143,6 +144,7 @@ class Prometheus extends Snake {
     struggle() {
         if (this.snakeHead.y === this.SNAKE_START_Y * this.GRID_SIZE) {
             this.struggled = true;
+            this.moveSFX.play();
             // Check effect on eagle
             if (!this.dead && this.eagle.y === this.snakeHead.y - this.GRID_SIZE) {
                 this.eagle.state = EagleState.FLAP_UP;

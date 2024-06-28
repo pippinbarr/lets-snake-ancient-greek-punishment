@@ -4,11 +4,13 @@
 - ~~Walls are misaligned~~
 - ~~Text is misaligned~~
 - ~~Head collision is delayed by one~~
+- More confusing than cute ~~I think the game Tint the apple to the different classic LPAG colours? Kind of cute?~~
+- ~~There's a single tick sound right at the start?~~
+- ~~General oddness around the tick and triggering events/sounds~~
 
-- General oddness around the tick and triggering things
-    - Delay on apple sound? 
-    - Delay on death sound?
-- I think the game Tint the apple to the different classic LPAG colours? Kind of cute?
+- Touch controls
+    - Menu touch-based
+    - Games swipe-based
 - There's always more bug checking in the banana stand
 
 ## Sisyphus
@@ -24,6 +26,7 @@
 
 - Oopsie, got so enthused I didn't write any todos for the majority of this ~~Get it working~~
 - Trying that out for now ~~Should the hover go vertically up? It's a bit complicated... maybe the eagle should come in at a slower tick? How? Eagle tick?~~
+- Added a move sound on struggle ~~Attention to sound~~
 
 ## Tantalus
 

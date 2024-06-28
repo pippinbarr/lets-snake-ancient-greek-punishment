@@ -28,7 +28,7 @@ class Snake extends Phaser.Scene {
         this.textGrid = [];
 
         this.score = 0;
-        this.next = undefined;
+        this.next = new Phaser.Geom.Point(0, 0);
         this.prev = undefined;
         this.bodyPiecesToAdd = 0;
         this.dead = false;
@@ -105,13 +105,16 @@ class Snake extends Phaser.Scene {
         }
 
         this.addSnakeBits();
-        this.checkAppleCollision();
-        this.checkBodyCollision();
-        this.checkWallCollision();
 
         if (!this.dead) {
             this.updateSnakePosition();
         }
+
+        this.checkAppleCollision();
+        this.checkBodyCollision();
+        this.checkWallCollision();
+
+
     }
 
     /**
@@ -248,7 +251,7 @@ class Snake extends Phaser.Scene {
         if (this.next.x == 0 && this.next.y == 0) return;
 
         if (this.snakeBitsToAdd > 0) {
-            let bit = this.snakeBodyGroup.create(0, 0, 'body');
+            let bit = this.snakeBodyGroup.create(-100, -100, 'body');
             bit.setOrigin(0, 0);
             this.snake.unshift(bit)
             this.snakeBitsToAdd = Math.max(0, this.snakeBitsToAdd - 1);
@@ -284,7 +287,7 @@ class Snake extends Phaser.Scene {
     }
 
     checkAppleCollision() {
-        if (this.snakeHead.body.position.equals(this.apple.body.position)) {
+        if (this.snakeHead.x === this.apple.x && this.snakeHead.y === this.apple.y) {
             this.appleSFX.play();
 
             this.apple.x = -1000;
@@ -302,7 +305,7 @@ class Snake extends Phaser.Scene {
 
     checkBodyCollision() {
         this.snakeBodyGroup.children.each((bit) => {
-            if (this.snakeHead.body.position.equals(bit.body.position)) {
+            if (this.snakeHead.x === bit.x && this.snakeHead.y === bit.y) {
                 this.die();
                 return;
             }
@@ -311,7 +314,7 @@ class Snake extends Phaser.Scene {
 
     checkWallCollision() {
         this.wallGroup.children.each((wall) => {
-            if (this.snakeHead.body.position.equals(wall.body.position)) {
+            if (this.snakeHead.x === wall.x && this.snakeHead.y === wall.y) {
                 this.die();
                 return;
             }
@@ -444,7 +447,7 @@ class Snake extends Phaser.Scene {
         this.WALL_TOP = 3;
         this.WALL_BOTTOM = this.NUM_ROWS - this.WALL_TOP - 1;
 
-        this.wallGroup = this.physics.add.group();
+        this.wallGroup = this.add.group();
         for (let y = this.WALL_TOP; y <= this.WALL_BOTTOM; y++) {
             for (let x = this.WALL_LEFT; x <= this.WALL_RIGHT; x++) {
                 if (y == this.WALL_TOP || y == this.WALL_BOTTOM || x == this.WALL_LEFT || x == this.WALL_RIGHT) {
@@ -456,7 +459,7 @@ class Snake extends Phaser.Scene {
     }
 
     createApple() {
-        this.apple = this.physics.add.image(-100, -100, 'apple');
+        this.apple = this.add.image(-100, -100, 'apple');
         this.apple.setOrigin(0, 0);
     }
 
@@ -522,8 +525,8 @@ class Snake extends Phaser.Scene {
 
     createSnake() {
         this.snake = [];
-        this.snakeBodyGroup = this.physics.add.group();
-        this.snakeHead = this.physics.add.image(this.SNAKE_START_X * this.GRID_SIZE, this.SNAKE_START_Y * this.GRID_SIZE, 'head');
+        this.snakeBodyGroup = this.add.group();
+        this.snakeHead = this.add.image(this.SNAKE_START_X * this.GRID_SIZE, this.SNAKE_START_Y * this.GRID_SIZE, 'head');
         this.snakeHead.setOrigin(0, 0);
         this.snake.unshift(this.snakeHead);
 

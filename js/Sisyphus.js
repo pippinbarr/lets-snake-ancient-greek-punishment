@@ -37,11 +37,12 @@ class Sisyphus extends Snake {
         ];
         this.currentApplePosition = 0;
 
+        this.rollDownSFX = this.sound.add(`lost-point`, 0.2);
+
         super.create();
     }
 
     repositionApple(apple = undefined, direction = 1) {
-        console.log(this.currentApplePosition, direction)
         // Need to see that apple!
         apple.setVisible(true);
 
@@ -51,7 +52,9 @@ class Sisyphus extends Snake {
         // Choose the next position (up or down)
         this.currentApplePosition += direction;
         // Clamp it
-        if (this.currentApplePosition < 1) this.currentApplePosition = 1;
+        if (this.currentApplePosition < 1) {
+            this.currentApplePosition = 1;
+        }
 
         // Check if they reached the top
         if (this.currentApplePosition === this.applePositions.length) {
@@ -64,6 +67,11 @@ class Sisyphus extends Snake {
         const pos = this.applePositions[this.currentApplePosition];
         apple.x = pos.x * this.GRID_SIZE;
         apple.y = pos.y * this.GRID_SIZE;
+
+        if (this.currentApplePosition === 2) {
+            // We don't roll back from position 2
+            return;
+        }
 
         // Delay the rollback based on whether it's already rolling or not
         const delayMultiplier = direction < 0 ? 1 : 10;

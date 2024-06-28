@@ -49,18 +49,23 @@ class Menu extends Snake {
       if (this.selected > 0) {
         this.selected--;
         this.snakeHead.y -= this.GRID_SIZE;
+        this.moveSFX.play();
       }
     }
     else if (Phaser.Input.Keyboard.JustDown(this.cursors.down)) {
       if (this.selected < this.games.length - 1) {
         this.selected++;
         this.snakeHead.y += this.GRID_SIZE;
+        this.moveSFX.play();
       }
     }
 
     if (Phaser.Input.Keyboard.JustDown(this.enterKey)) {
       this.next = new Phaser.Geom.Point(this.GRID_SIZE, 0);
       this.transition = true;
+      this.appleSFX.play();
+      // For some reason it plays a single moveSFX at the end of the scene??
+      this.moveSFX.setVolume(0);
       this.time.addEvent({
         delay: 1500,
         callback: () => {
