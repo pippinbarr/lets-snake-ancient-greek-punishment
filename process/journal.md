@@ -1,5 +1,11 @@
 # Journal
 
+## Revisionist history -- ?? June 2024
+
+I'm swooping in to add a precursor image of the index cards I wrote in June as I tried to come up with ideas for a game to make:
+
+![Index cards with ideas for game designs](./images/index-cards.png)
+
 ## Start-up Culture -- Monday 24 June 2024
 
 Well I started something. I figured (as per the [Why](./why.md)) I should just make something that should be "easy". I really hope it doesn't end up being, you know, not-easy.
