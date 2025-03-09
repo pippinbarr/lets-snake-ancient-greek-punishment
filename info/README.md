@@ -14,6 +14,9 @@
 
 ## Pressssss
 
+- [Let's Snake: Ancient Greek Punishment](https://slitheriogame.io/). Slither.io Game. n.d. (This is, as far as I can tell, a site devoted to snake games that actually provides some genuine analysis of the games!)
+- [Web Game of the Day: Let’s Snake: Ancient Greek Punishment](https://museumofscreens.wordpress.com/2024/07/07/web-game-of-the-day-lets-snake-ancient-greek-punishment/). Museum of Screens. 7 July 2024.
+
 Read the [Pressssss Kit](../press) for pressssss information
 
 ## Documentation
